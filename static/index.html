@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Digit Recoognition</title>
+    <style>
+        #canvas {
+            border: 1px solid;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Digit Recognition App</h1>
+    <p id="prediction_text">Prediction: None</p>
+    <p id="status"></p>
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <br><br>
+    <button id="predict" type="button">predict</button>
+    <button id="clear" type="button">clear</button>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="draw.js"></script>
+    <script src="predict.js"></script>
+
+</body>
+</html>
