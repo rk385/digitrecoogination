@@ -2,21 +2,112 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
     <title>Digit Recoognition</title>
     <style>
+      button{
+        font-size:20px ;
+        background: #b6bcbe ;
+        margin-left: 60px;
+      }
+      p{
+        font-size: 30px;
+        background: #b6bcbe ;
+        margin-left: 0px;
+      }
+      *
+{
+    margin: 0;
+    padding: 0; 
+}
+.nav-bar{
+    background: #1d4052;
+    color: #fff;
+    padding: 20px;
+    font-family: sans-serif;
+}
+.nav-bar h5{
+    float: left;
+    margin-left: 20px;
+}
+
+
+
+.menu-right{
+    text-align: right;
+}
+ul li{
+    display: inline-block;
+    margin: 20px;
+    list-style: none;
+    
+}
+
+span{
+    margin: 0 20px;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+}
+
+@media only screen and (max-width: 700px){
+    span
+    {
+        display: block;
+    }
+    ul li{
+        display: block;
+    }
+    ul{
+        display: none;
+    }
+}
+
         #canvas {
-            border: 1px solid;
+            border: 20px groove;
         }
+        body {
+      background-image: url('n6.jpg');
+      background-repeat:no-repeat;
+      background-size: cover;
+    }
     </style>
   </head>
   <body>
-    <h1>Digit Recognition App</h1>
-    <p id="prediction_text">Prediction: None</p>
+    <div class="nav-bar">
+      <h1>Hand Written Digit Recognition App</h1>
+      <div class="menu-right">
+          <span onClick="myFunction()">&#9776;</span>
+         <ul id="menu">
+          <li>HOME</li>      
+          <li>ABOUT</li>    
+          <li>CONTACT</li>    
+          </ul>
+      </div>
+  
+ 
+  </div>   
+ 
+ <script>
+     function myFunction(){
+        var x = document.getElementById("menu"); 
+         
+         if(x.style.display == "block")
+         {
+             x.style.display = "none";
+         }
+         else{
+             x.style.display = "block";
+         }
+     }
+ </script>
+    <p id="prediction_text">Prediction: None</p> 
+      
     <p id="status"></p>
     <canvas id="canvas" width="300" height="300"></canvas>
     <br><br>
-    <button id="predict" type="button">predict</button>
-    <button id="clear" type="button">clear</button>
+    <button id="predict" type="button">Predict</button>
+    <button id="clear" type="button">Clear</button>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
